@@ -3,11 +3,8 @@
 class Solution:
     def minCost(self, houses: List[int], cost: List[List[int]], m: int, n: int, target: int) -> int:
         dp = [[[sys.maxsize for k in range(n)] for j in range(target + 1)] for i in range(m + 1)]
-        min_dp = [[sys.maxsize for j in range(target + 1)] for i in range(m + 1)]
-        
         for k in range(n):
             dp[0][0][k] = 0
-        min_dp[0][0] = 0
         
         for i in range(1, m + 1):
             if houses[i - 1] == 0:
